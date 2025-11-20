@@ -1,9 +1,11 @@
+Markdown
+
 # 📸 Vynapics Gallery (Full Stack Photography Portfolio)
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)
 ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=flat&logo=django&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 **Vynapics Gallery** is a modern, dockerized web application designed to showcase high-resolution photography portfolios. Developed as a final project for the **"Applied Internet Applications"** course, it features a decoupled architecture with a **Django REST Framework** backend and a **React** frontend, all orchestrated via **Docker Compose**.
 
@@ -37,13 +39,19 @@
 
 This project is fully dockerized. You don't need to install Python or Node.js locally. You only need **Docker Desktop**.
 
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/YOUR_USERNAME/vynapics-gallery.git](https://github.com/YOUR_USERNAME/vynapics-gallery.git)
+cd vynapics-gallery
 2. Build and Run
 Run the following command in the root directory:
-  Bash:
-    docker-compose up --build
+
+Bash
+
+docker-compose up --build
 Wait for a few minutes for the initial build (Python and Node packages installation).
 
-4. Access the Application
+3. Access the Application
 Once the terminal logs settle, access the app via your browser:
 
 Frontend (Gallery): http://localhost:5173
@@ -55,8 +63,10 @@ Creating an Admin User
 Since the database starts fresh in Docker, you need to create a superuser to upload photos.
 
 While the containers are running, open a new terminal and run:
-  Bash:
-    docker-compose exec backend python manage.py createsuperuser
+
+Bash
+
+docker-compose exec backend python manage.py createsuperuser
 Follow the prompts to set a username and password.
 
 Uploading Photos
@@ -85,7 +95,6 @@ vynapics-gallery/
 │
 ├── docker-compose.yml   # Orchestration of Frontend & Backend services
 └── README.md            # Project documentation
-
 🤝 Contributing
 This is an academic project, but suggestions are welcome.
 
