@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_ALLOWED_HOSTS=*
+    volumes:
+      # Nokta (.) "Şu an bulunduğum klasör" demektir.
+      # Dosyaların manage.py ile aynı hizada olduğu için direkt adını yazıyoruz.
+      - ./media:/app/media
+      - ./db.sqlite3:/app/db.sqlite3
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend

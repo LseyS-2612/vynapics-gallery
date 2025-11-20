@@ -1,0 +1,18 @@
+# Python & Django Gereksizleri
+__pycache__/
+*.py[cod]
+venv/
+.env
+db.sqlite3
+
+# Frontend Gereksizleri (Bunlar çok ağırdır, internetten iner)
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Medya Dosyaları (Yerel resimler git'e yüklenmez)
+media/
+backend/media/
+
+# Sistem Dosyaları
+.DS_Store

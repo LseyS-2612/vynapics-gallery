@@ -1,0 +1,251 @@
+/* 1. Modern Font İçe Aktar */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* 2. Genel Sayfa Ayarları */
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: #121212;  <-- BU SATIRI SİLİYORUZ */
+  color: #e0e0e0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  /* Arkaplan taşmasını önlemek için */
+  min-height: 100vh; 
+  overflow-x: hidden;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3. Cam Header (KÜÇÜLTÜLMÜŞ VERSİYON) */
+.glass-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(18, 18, 18, 0.85); /* Biraz daha koyu ve opak */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  
+  /* DEĞİŞİKLİK: Paddingi 20px'ten 10px'e düşürdük */
+  padding: 10px 0; 
+  
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+
+  /* --- SOSYAL MEDYA İKONLARI --- */
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* İkonlar arası boşluk */
+  margin-top: 8px; /* Slogan ile ikonlar arası boşluk */
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px; /* İkon boyutu */
+  height: 24px;
+  color: #aaa; /* Varsayılan renk (Gri) */
+  transition: all 0.3s ease;
+}
+
+.social-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Instagram Hover Rengi (Gradyan efekti zor olduğu için koyu pembe kullanıyoruz) */
+.social-btn.instagram:hover {
+  color: #e1306c;
+  transform: scale(1.2); /* Hafif büyüme efekti */
+}
+
+/* Pinterest Hover Rengi (Kırmızı) */
+.social-btn.pinterest:hover {
+  color: #bd081c;
+  transform: scale(1.2);
+}
+}
+
+.header-content h1 {
+  margin: 0;
+  font-weight: 600;
+  
+  /* DEĞİŞİKLİK: Yazı boyutunu küçülttük */
+  font-size: 1.4rem; 
+  
+  letter-spacing: 1.5px;
+  background: linear-gradient(90deg, #fff, #bbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-content p {
+  /* DEĞİŞİKLİK: Slogan ile başlık arasını kıstık */
+  margin: 2px 0 0; 
+  
+  /* DEĞİŞİKLİK: Sloganı daha da küçülttük */
+  font-size: 0.75rem; 
+  
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.container {
+  max-width: 1400px; /* Daha geniş alan */
+  margin: 0 auto;
+  padding: 40px 20px;
+  flex: 1;
+}
+
+/* 4. Masonry Grid Düzeni */
+.gallery-grid {
+  column-count: 4;
+  column-gap: 25px;
+}
+
+@media (max-width: 1024px) { .gallery-grid { column-count: 3; } }
+@media (max-width: 768px) { .gallery-grid { column-count: 2; } }
+@media (max-width: 480px) { .gallery-grid { column-count: 1; } }
+
+/* 5. Premium Fotoğraf Kartı */
+.photo-card {
+  background-color: #1e1e1e; /* Kart rengi */
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  break-inside: avoid;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.photo-card:hover {
+  transform: translateY(-8px); /* Üzerine gelince yukarı kalksın */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Resim Efektleri */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.photo-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.photo-card:hover img {
+  transform: scale(1.05); /* Resim hafifçe yaklaşsın */
+}
+
+/* Resim üzerindeki yazı katmanı (Overlay) */
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay span {
+  color: white;
+  font-size: 0.8rem;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Kart Bilgileri */
+.card-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.photo-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Minimalist Puanlama (KÜÇÜLTÜLMÜŞ) */
+.rating-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px; /* Üst boşluğu azalttık */
+}
+
+.buttons {
+  background: #252525;
+  border: 1px solid #333;
+  
+  /* DEĞİŞİKLİK: Kutuyu iyice daralttık */
+  padding: 3px 8px; 
+  border-radius: 20px;
+  
+  display: flex;
+  gap: 1px; /* Yıldızları birbirine yaklaştırdık */
+}
+.rate-btn {
+  background: none;
+  border: none;
+  color: #444; 
+  
+  /* DEĞİŞİKLİK: Yıldız boyutunu küçülttük */
+  font-size: 1rem; 
+  
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  padding: 0 1px;
+  line-height: 1;
+}
+
+/* Dolu yıldız */
+.rate-btn.active-star {
+  color: #ffd700; 
+  transform: scale(1.1); 
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); /* Parlamayı azalttık */
+}
+
+.rate-btn:active {
+  transform: scale(0.9);
+}
+.rate-btn:hover {
+  color: #ffd700; /* Altın rengi */
+  transform: scale(1.3);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #444;
+  font-size: 0.8rem;
+  border-top: 1px solid #222;
+}
+
+.loading-text {
+  text-align: center;
+  color: #666;
+  margin-top: 50px;
+}
