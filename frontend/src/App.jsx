@@ -76,13 +76,13 @@ function App() {
   }
 
   const handleRate = (photoId, score) => {
-    axios.post('https://vynapics-gallery.onrender.com/api/rate/', ...), {
+    // DÜZELTİLMİŞ KISIM:
+    axios.post('https://vynapics-gallery.onrender.com/api/rate/', {
       photo: photoId,
       score: score
     })
-    .then(() => { 
-      // Puan verdikten sonra belki bir bildirim gösterilebilir
-      // Şimdilik sessizce kaydediyoruz.
+    .then(() => {
+      alert(`Teşekkürler! ${score} yıldız verdiniz.`)
     })
     .catch(() => alert("Hata oluştu."))
   }
