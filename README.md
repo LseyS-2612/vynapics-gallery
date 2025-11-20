@@ -51,9 +51,10 @@ Run the following command in the root directory:
 ```bash
 
 docker-compose up --build
+```
+
 Wait for a few minutes for the initial build (Python and Node packages installation).
 
-```
 
 ### 3. Access the Application
 Once the terminal logs settle, access the app via your browser:
@@ -84,7 +85,9 @@ Click "Add Photo", upload your images, and save.
 
 Refresh the Frontend at http://localhost:5173.
 
-📂 Project Structure
+## 📂 Project Structure
+
+```text
 vynapics-gallery/
 ├── backend/             # Django API Source Code
 │   ├── gallery/         # App logic (Models, Views, Serializers)
@@ -99,7 +102,8 @@ vynapics-gallery/
 │
 ├── docker-compose.yml   # Orchestration of Frontend & Backend services
 └── README.md            # Project documentation
-🤝 Contributing
+```
+
 This is an academic project, but suggestions are welcome.
 
 Fork the repo.
