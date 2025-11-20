@@ -70,13 +70,13 @@ function App() {
   }, [photos]); // photos değiştiğinde bu useEffect tekrar çalışsın
 
   const fetchPhotos = () => {
-    axios.get('http://localhost:8000/api/photos/')
+    axios.get('https://vynapics-gallery.onrender.com/api/photos/')
       .then(response => setPhotos(response.data))
       .catch(error => console.error("Hata:", error))
   }
 
   const handleRate = (photoId, score) => {
-    axios.post('http://localhost:8000/api/rate/', {
+    axios.post('https://vynapics-gallery.onrender.com/api/rate/', ...), {
       photo: photoId,
       score: score
     })
