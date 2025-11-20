@@ -49,7 +49,6 @@ cd vynapics-gallery
 Run the following command in the root directory:
 
 ```bash
-
 docker-compose up --build
 ```
 
@@ -69,9 +68,10 @@ Since the database starts fresh in Docker, you need to create a superuser to upl
 
 While the containers are running, open a new terminal and run:
 
-Bash
-
+```bash
 docker-compose exec backend python manage.py createsuperuser
+```
+
 Follow the prompts to set a username and password.
 
 Uploading Photos
@@ -93,7 +93,7 @@ vynapics-gallery/
 │   ├── gallery/         # App logic (Models, Views, Serializers)
 │   ├── media/           # Uploaded images storage
 │   ├── Dockerfile       # Python environment setup
-│   └── requirements.txt # Python dependencies
+│   └── requirements.txt # Python dependenciess
 │
 ├── frontend/            # React Source Code
 │   ├── src/             # Components (App.jsx, etc.)
