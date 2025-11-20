@@ -43,20 +43,24 @@ This project is fully dockerized. You don't need to install Python or Node.js lo
 ```bash
 git clone [https://github.com/YOUR_USERNAME/vynapics-gallery.git](https://github.com/YOUR_USERNAME/vynapics-gallery.git)
 cd vynapics-gallery
-2. Build and Run
+```
+
+### 2. Build and Run
 Run the following command in the root directory:
 
-Bash
+```bash
 
 docker-compose up --build
 Wait for a few minutes for the initial build (Python and Node packages installation).
 
-3. Access the Application
+```
+
+### 3. Access the Application
 Once the terminal logs settle, access the app via your browser:
 
-Frontend (Gallery): http://localhost:5173
+* **Frontend (Gallery):** http://localhost:5173
 
-Backend (Admin Panel): http://localhost:8000/admin
+* **Backend (Admin Panel):** http://localhost:8000/admin
 
 ⚙️ Configuration & Usage
 Creating an Admin User
